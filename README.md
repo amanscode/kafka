@@ -93,5 +93,7 @@ https://kafka.apache.org/uses
 For Kafka Monitoring:
 https://kafka.apache.org/documentation/#monitoring
 
-For Monitoring, you can use Prometheus agent with Grafana.
+For Monitoring, you can use Prometheus agent with Grafana, see below link:
+https://medium.com/@mousavi310/monitor-apache-kafka-using-grafana-and-prometheus-873c7a0005e2
+
 
