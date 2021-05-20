@@ -84,3 +84,14 @@ bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --boots
 bin/kafka-console-consumer.sh --topic word-count-input-topic --from-beginning --bootstrap-server localhost:9092
 bin/kafka-console-consumer.sh --topic word-count-output-topic --from-beginning --bootstrap-server localhost:9092
 ```
+
+## Important Links
+
+Uses of Kafka:
+https://kafka.apache.org/uses
+
+For Kafka Monitoring:
+https://kafka.apache.org/documentation/#monitoring
+
+For Monitoring, you can use Prometheus agent with Grafana.
+
