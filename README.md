@@ -96,7 +96,10 @@ https://kafka.apache.org/documentation/#monitoring
 For Monitoring, you can use Prometheus agent with Grafana, see below link:
 https://medium.com/@mousavi310/monitor-apache-kafka-using-grafana-and-prometheus-873c7a0005e2
 
-How Consumer and Consumer Groups work?
+Delivery Semantics For Producer:
+https://dzone.com/articles/kafka-producer-delivery-semantics
+
+Delivery Semantics For Consumer:
 https://www.javatpoint.com/apache-kafka-consumer-and-consumer-groups
 
 Overcome Data Order Issue in Kafka:
