@@ -86,6 +86,18 @@ bin/kafka-console-consumer.sh --topic topic_name --from-beginning --bootstrap-se
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic_name --property print.key=true --property key.separator="-" --from-beginning
 ```
 
+## Command to list the consumer groups in the Kafka
+
+```bash
+./bin/kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
+```
+
+## Command to list all the consumers present in the consumer groups
+
+```bash
+kafka-consumer-groups.sh --describe --group consumer_group_name --members --bootstrap-server localhost:9092
+```
+
 ## Command to make broker accessible from other servers
 
 ```bash
