@@ -32,17 +32,17 @@ bin/kafka-server-start.sh config/server.properties
 ## Commands to create Topics
 
 ```bash
-bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
-bin/kafka-topics.sh --create --topic word-count-input-topic --bootstrap-server localhost:9092
-bin/kafka-topics.sh --create --topic word-count-output-topic --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic topic_name --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic topic_name --bootstrap-server localhost:9092
+bin/kafka-topics.sh --create --topic topic_name --bootstrap-server localhost:9092
 ```
 
 ## Commands to Describe Topics
 
 ```bash
-bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server localhost:9092
-bin/kafka-topics.sh --describe --topic word-count-input-topic --bootstrap-server localhost:9092
-bin/kafka-topics.sh --describe --topic word-count-output-topic --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic topic_name --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic topic_name --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic topic_name --bootstrap-server localhost:9092
 ```
 
 ## Commands to change retention time of a Topic
@@ -50,39 +50,46 @@ bin/kafka-topics.sh --describe --topic word-count-output-topic --bootstrap-serve
 Try any one of them :
 
 ```bash
-bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic quickstart-events --config retention.ms=10000
+bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic topic_name --config retention.ms=10000
 ```
 
 ```bash
-bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-name quickstart-events --entity-type topics  --add-config retention.ms=1000
+bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-name topic_name --entity-type topics  --add-config retention.ms=1000
 ```
 
 ```bash
-bin/kafka-configs.sh --bootstrap-server localhost:2181 --alter --entity-name quickstart-events --entity-type topics  --add-config retention.ms=1000
+bin/kafka-configs.sh --bootstrap-server localhost:2181 --alter --entity-name topic_name --entity-type topics  --add-config retention.ms=1000
 ```
 
 
 ## Commands to Delete Topics
 
 ```bash
-bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic quickstart-events
-bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic word-count-input-topic
-bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic word-count-output-topic
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic topic_name
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic topic_name
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic topic_name
 ```
 
 ## Commannd to Start Kafka Producer
 
 ```bash
-bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
-bin/kafka-console-producer.sh --topic word-count-input-topic --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic topic_name --bootstrap-server localhost:9092
+bin/kafka-console-producer.sh --topic topic_name --bootstrap-server localhost:9092
 ```
 
 ## Commands to Start Kafka Consumer
 
 ```bash
-bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-consumer.sh --topic word-count-input-topic --from-beginning --bootstrap-server localhost:9092
-bin/kafka-console-consumer.sh --topic word-count-output-topic --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic topic_name --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic topic_name --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic topic_name --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic topic_name --property print.key=true --property key.separator="-" --from-beginning
+```
+
+## Command to make broker accessible from other servers
+
+```bash
+kafka-server-start.sh config/server.properties --override  advertised.listeners=PLAINTEXT://<broker-hostname>:9092
 ```
 
 ## Important Links
